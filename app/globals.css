@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Emerald accent palette */
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+
+  /* Status colors */
+  --color-status-certified: #10b981;
+  --color-status-pending: #f59e0b;
+  --color-status-denied: #ef4444;
+
+  /* Risk colors */
+  --color-risk-low: #10b981;
+  --color-risk-medium: #f59e0b;
+  --color-risk-high: #ef4444;
+
+  /* Dark theme surfaces */
+  --color-surface-base: #0a0a0a;
+  --color-surface-card: #141414;
+  --color-surface-elevated: #1a1a1a;
+  --color-surface-hover: #1f1f1f;
+  --color-surface-input: #0f0f0f;
+
+  /* Borders */
+  --color-border-default: #262626;
+  --color-border-subtle: #1a1a1a;
+  --color-border-focus: #10b981;
+
+  /* Text */
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-text-inverse: #0a0a0a;
+
+  /* Gradients for tool icons */
+  --color-gradient-violet-from: #8b5cf6;
+  --color-gradient-violet-to: #6d28d9;
+  --color-gradient-blue-from: #3b82f6;
+  --color-gradient-blue-to: #1d4ed8;
+  --color-gradient-rose-from: #f43f5e;
+  --color-gradient-rose-to: #be123c;
+  --color-gradient-amber-from: #f59e0b;
+  --color-gradient-amber-to: #d97706;
+  --color-gradient-sky-from: #0ea5e9;
+  --color-gradient-sky-to: #0369a1;
+  --color-gradient-emerald-from: #10b981;
+  --color-gradient-emerald-to: #047857;
+  --color-gradient-orange-from: #f97316;
+  --color-gradient-orange-to: #c2410c;
+  --color-gradient-indigo-from: #6366f1;
+  --color-gradient-indigo-to: #4338ca;
+
+  /* Fonts */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Scan animation */
+@keyframes scan-line {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(16, 185, 129, 0.2); }
+}
+
+.animate-scan-line {
+  animation: scan-line 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
